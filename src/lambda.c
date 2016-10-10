@@ -14,6 +14,12 @@ int main(int argc, char *argv[]) {
         *strchr(buf, '\n') = 0;
 
         AST parsed = parse(StringInput(buf));
+
+        if (parsed == NULL) {
+            printf("parse error\n> ");
+            continue;
+        }
+
         AST out = eval(parsed);
 
         printAST(out);
