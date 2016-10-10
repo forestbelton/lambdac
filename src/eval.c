@@ -36,4 +36,7 @@ AST substitute(char *name, AST arg, AST body) {
                 substitute(name, arg, body->abstract.body)
             );
     }
+
+    // should not be reached
+    return NULL;
 }
